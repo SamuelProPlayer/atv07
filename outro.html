@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 08 - Do Protótipo ao Código</title>
+  
+  <!-- Estilos do Bootstrap via node_modules -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Ícones do Bootstrap (opcional via CDN ou biblioteca interna) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<!-- Estrutura Sticky Footer: min-vh-100 + flex-column -->
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <!-- Componente 1: Navbar (Barra de Navegação) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-cpu me-2"></i>TechApp
+      </a>
+      <!-- Componente 2: Navbar Toggler (Menu Responsivo / Offcanvas trigger) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Recursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Preços</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL (flex-grow-1 garante preenchimento do espaço vertical) -->
+  <main class="flex-grow-1 container py-4">
+    
+    <!-- Título da Página com Componente 3: Badge -->
+    <div class="d-flex align-items-center mb-4">
+      <h2 class="mb-0 me-3">Painel de Controle</h2>
+      <span class="badge bg-success">Versão 5.3 Ativa</span>
+    </div>
+
+    <!-- PRIMEIRA LINHA DO GRID (2 linhas x 3 colunas) -->
+    <div class="row g-4 mb-4">
+      
+      <!-- Linha 1 / Coluna 1: Botão e Disparador de Modal -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-white border rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center">
+          <h5 class="fw-bold mb-3">Ações Rápidas</h5>
+          <!-- Componente 4: Button -->
+          <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalAcao">
+            <i class="bi bi-box-arrow-up-right me-2"></i>Abrir Modal
+          </button>
+        </div>
+      </div>
+
+      <!-- Linha 1 / Coluna 2: Card com Imagem Responsiva -->
+      <div class="col-12 col-md-4">
+        <!-- Componente 5: Card -->
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://picsum.photos/600/350" class="card-img-top img-fluid" alt="Imagem Responsiva">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">Card Informativo</h5>
+            <p class="card-text text-muted small">
+              Imagem com classe <code>img-fluid</code> garantindo total adaptação às diferentes telas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 1 / Coluna 3: Botões empilhados com Flexbox -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-white border rounded shadow-sm h-100 d-flex flex-column justify-content-center gap-2">
+          <h5 class="fw-bold text-center mb-3">Painel Flexbox</h5>
+          <button class="btn btn-outline-success"><i class="bi bi-check-circle me-2"></i>Salvar</button>
+          <button class="btn btn-outline-warning"><i class="bi bi-pencil me-2"></i>Editar</button>
+          <button class="btn btn-outline-danger"><i class="bi bi-trash me-2"></i>Excluir</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEGUNDA LINHA DO GRID -->
+    <div class="row g-4 mb-4">
+      
+      <!-- Linha 2 / Coluna 1: Componente 6: Alert -->
+      <div class="col-12 col-md-4">
+        <div class="alert alert-info shadow-sm mb-0 h-100" role="alert">
+          <h5 class="alert-heading fw-bold"><i class="bi bi-info-circle me-2"></i>Notificação</h5>
+          <p class="mb-0 small">O sistema sincronizou seus protótipos do Figma/Stitch via MCP com sucesso.</p>
+        </div>
+      </div>
+
+      <!-- Linha 2 / Coluna 2: Componente 7: Progress Bar -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-white border rounded shadow-sm h-100 d-flex flex-column justify-content-center">
+          <h6 class="fw-bold mb-2">Sincronização do Projeto</h6>
+          <div class="progress mb-2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 75%">75%</div>
+          </div>
+          <small class="text-muted">Importação via Antigravity IDE</small>
+        </div>
+      </div>
+
+      <!-- Linha 2 / Coluna 3: Componente 8: List Group -->
+      <div class="col-12 col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-header bg-primary text-white fw-bold">Tarefas Pendentes</div>
+          <ul class="list-group list-group-flush small">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Auditoria de Código <span class="badge bg-primary rounded-pill">OK</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Testes de Breakpoint <span class="badge bg-warning rounded-pill">Pendente</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Componente 9: Modal -->
+  <div class="modal fade" id="modalAcao" tabindex="-1" aria-labelledby="modalAcaoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalAcaoLabel"><i class="bi bi-gear-fill me-2"></i>Configurações do Layout</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Este modal foi acionado através dos atributos nativos do Bootstrap (<code>data-bs-toggle="modal"</code>).
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Componente 10: Footer (Rodapé Fixo / Sticky Footer) -->
+  <footer class="bg-dark text-white text-center py-3 mt-auto border-top border-secondary">
+    <div class="container">
+      <p class="mb-0 small">&copy; 2026 - Projeto Front-end Bootstrap 5.3 | Desenvolvido com auxílio de IA (Stitch / Antigravity)</p>
+    </div>
+  </footer>
+
+  <!-- Script do Bootstrap via node_modules -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
